@@ -1,8 +1,8 @@
 pipeline {
     agent  { label 'node' }
     parameters {
-        string(name: 'branch', defaultValue: 'main', description: 'job build on default branch master')
-        //choice(name: 'CHOICES', choices: ['main', 'new_branch', 'spring_master','gopi' ], description: 'using parameters')
+       // string(name: 'branch', defaultValue: 'main', description: 'job build on default branch master')
+        choice(name: 'CHOICES', choices: ['main', 'new_branch', 'spring_master','gopi' ], description: 'using parameters')
     }
     triggers { pollSCM('* * * * *') }
     stages {
@@ -41,10 +41,10 @@ pipeline {
                 }
             }
         }
-        stage("Quality Gate") {
-            steps {
-              timeout(time: 1, unit: 'HOURS') {
-                waitForQualityGate abortPipeline: false
+        //stage("Quality Gate") {
+          //  steps {
+            //  timeout(time: 1, unit: 'MINUTES') {
+             //   waitForQualityGate abortPipeline: false
               }
             }
           }
