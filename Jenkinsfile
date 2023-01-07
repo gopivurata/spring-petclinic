@@ -4,7 +4,7 @@ pipeline {
        // string(name: 'branch', defaultValue: 'main', description: 'job build on default branch master')
         choice(name: 'CHOICES', choices: ['main', 'new_branch', 'spring_master','gopi' ], description: 'using parameters')
     }
-    triggers { pollSCM('* * * * *') }
+   // triggers { pollSCM('* * * * *') }
     stages {
         stage('git') {
             steps {
