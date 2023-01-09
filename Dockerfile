@@ -11,9 +11,9 @@ FROM openjdk:11
 LABEL application="spring-petclinic"
 LABEL owner="gopi"
 EXPOSE 8080
-USER ubuntu
+#USER ubuntu
 #COPY --from=build /spring-petclinic/target/spring-petclinic-2.7.3.jar /spring-petclinic-2.7.3.jar
-RUN cd /home/ubuntu/root/workspace/spring-pet-clinic/target/ && pwd
+RUN cd /home/ubuntu/root/workspace/spring-pet-clinic/target/
 ADD /home/ubuntu/root/workspace/spring-pet-clinic/target/spring-petclinic-2.7.3.jar /spring-petclinic-2.7.3.jar
 WORKDIR /
 CMD [ "java", "-jar", "spring-petclinic-2.7.3.jar" ]
