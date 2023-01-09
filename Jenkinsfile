@@ -1,7 +1,7 @@
 pipeline {
     agent  { label 'node' }
     parameters {
-        string(name: 'branch', defaultValue: 'gopi', description: 'job build on default branch gopi')
+        string(name: 'branch', defaultValue: 'main', description: 'job build on default branch gopi')
        // choice(name: 'CHOICES', choices: ['main', 'new_branch', 'spring_master','gopi' ], description: 'using parameters')
     }
    // triggers { pollSCM('* * * * *') }
